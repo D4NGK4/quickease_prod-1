@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+NAME='capstoneproject'
+DJANGODIR=/root/webapps/capstoneproject/capstone_test_deployment
+SOCKFILE=/root/webapps/capstoneproject/run/gunicorn.sock
+USER=qeadmin
+GROUP=webapps
+NUM_WORKERS=9
+DJANGO_SETTINGS_MODULE=deptest_quickease.conf.prod
+DJANGO_WSGI_MODULE=deptest_quickease.wsgi
+TIMEOUT=120
+
+cd $DJANGODIR
+source ../venv/bin/activate
+export DJANGO_SETTINGS_MODULE=$DJANGO_SETTINGS_MODULE
+export PYTHONPATH=$DJANGODIR:$PYTHONPATH
+
+RUNDIR=$(dirname $SOCKFILE)
+test -d $RUNDIR || mkdir -p $RUNDIR
+
+exec ../venv/bin/gunicorn ${DJANGO_WSGI_MODULE}:application \
+  --name $NAME \
+  --workers $NUM_WORKERS \
+  --timeout $TIMEOUT \
+  --user=$USER --group=$GROUP \
+  --bind=unix:$SOCKFILE \
+  --log-level=debug \
+  --log-file=-
+ 
