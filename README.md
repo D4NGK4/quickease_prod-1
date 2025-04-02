@@ -130,6 +130,8 @@ To double-check everything installed correctly:
 python -m django --version
 ```
 
+````
+
 ---
 
 ## Need Help?
