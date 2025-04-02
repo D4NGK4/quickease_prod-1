@@ -1,6 +1,6 @@
 # **<span style="color:red">_!! IMPORTANT NOTE !!_</span>**
 
-**This API application is meant to be hosted in a DigitalOcean Droplet. Any and all the code run on a local machine will <span style="color:red">NOT</span> work. Please contact our developers at quickease.team@gmail.com for inquiries.**
+**This is an API, it is meant to be hosted in a DigitalOcean Droplet. Any and all the code run on a local machine will <span style="color:red">NOT</span> work. Please contact our developers at quickease.team@gmail.com for inquiries.**
 
 **You are free to try and install the application but all unoperable features are beyond our scope of support.**
 
