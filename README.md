@@ -14,7 +14,7 @@ Welcome to the **QuickEase Backend**! This guide will walk you through setting u
 
 Ensure you have the following installed:
 
-- **Python 3.11+**
+- **Python 3.9+**
 - **pip** (comes with Python)
 - **git** (to clone the repository)
 
